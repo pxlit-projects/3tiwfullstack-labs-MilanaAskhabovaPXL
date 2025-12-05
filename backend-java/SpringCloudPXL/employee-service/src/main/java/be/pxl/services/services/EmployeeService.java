@@ -13,7 +13,28 @@ public class EmployeeService implements IEmployeeService {
     private final EmployeeRepository employeeRepository;
 
     @Override
+    public Employee addEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    @Override
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+    }
+
+    @Override
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public List<Employee> getEmployeesByDepartment(Long departmentId) {
+        return employeeRepository.findByDepartmentId(departmentId);
+    }
+
+    @Override
+    public List<Employee> getEmployeesByOrganization(Long organizationId) {
+        return employeeRepository.findByOrganizationId(organizationId);
     }
 }
