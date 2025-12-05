@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f99e96b2-cdc1-428e-8d8c-27fb720e4c54" name="Changes" comment="">
+    <list default="true" id="f99e96b2-cdc1-428e-8d8c-27fb720e4c54" name="Changes" comment="finish employee service">
+      <change afterPath="$PROJECT_DIR$/department-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/DepartmentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/client/EmployeeFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/controller/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/domain/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/dto/DepartmentWithEmployeesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/dto/EmployeeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/repository/DepartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/services/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/java/be/pxl/services/services/IDepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/department-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee-service/src/main/java/be/pxl/services/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee-service/src/main/java/be/pxl/services/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee-service/src/main/java/be/pxl/services/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee-service/src/main/java/be/pxl/services/repository/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/employee-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,6 +48,9 @@
         <option name="url" value="https://github.com/pxlit-projects/3tiwfullstack-labs-MilanaAskhabovaPXL.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -89,7 +101,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EmployeeServiceApplication">
+  <component name="RunManager" selected="Spring Boot.DepartmentServiceApplication">
+    <configuration name="DepartmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="department-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.pxl.services.DepartmentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EmployeeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="employee-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="be.pxl.services.EmployeeServiceApplication" />
@@ -126,9 +145,32 @@
       <updated>1764894690918</updated>
       <workItem from="1764894691978" duration="671000" />
     </task>
+    <task id="LOCAL-00001" summary="finish employee service">
+      <option name="closed" value="true" />
+      <created>1764897392565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764897392565</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finish employee service" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish employee service" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
