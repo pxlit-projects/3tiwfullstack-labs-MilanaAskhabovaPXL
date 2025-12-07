@@ -25,9 +25,10 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee getEmployeeById(Long id) {
-        return employeeRepository.findById(id)
+    public EmployeeResponse getEmployeeById(Long id) {
+        Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+        return mapToEmployeeResponse(employee);
     }
 
     @Override

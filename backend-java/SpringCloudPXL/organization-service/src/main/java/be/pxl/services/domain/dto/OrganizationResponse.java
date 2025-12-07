@@ -1,6 +1,7 @@
-package be.pxl.services.domain;
+package be.pxl.services.domain.dto;
 
-import jakarta.persistence.*;
+import be.pxl.services.domain.Department;
+import be.pxl.services.domain.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,22 +9,13 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
-@Table(name="organization")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Organization {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
+public class OrganizationResponse {
     private String name;
     private String address;
-    @Transient
     private List<Employee> employees;
-    @Transient
     private List<Department> departments;
 }
