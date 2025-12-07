@@ -1,6 +1,8 @@
 package be.pxl.services.controller;
 
 import be.pxl.services.domain.Employee;
+import be.pxl.services.domain.dto.EmployeeRequest;
+import be.pxl.services.domain.dto.EmployeeResponse;
 import be.pxl.services.services.IEmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,8 +18,9 @@ public class EmployeeController {
     private final IEmployeeService employeeService;
 
     @PostMapping
-    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
-        return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addEmployee(@RequestBody EmployeeRequest employeeRequest) {
+         employeeService.addEmployee(employeeRequest);
     }
 
     @GetMapping("/{id}")
@@ -26,17 +29,18 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Employee>> findAll() {
+    public ResponseEntity<List<EmployeeResponse>> findAll() {
         return new ResponseEntity<>(employeeService.getAllEmployees(), HttpStatus.OK);
     }
 
     @GetMapping("/department/{departmentId}")
-    public ResponseEntity<List<Employee>> findByDepartment(@PathVariable Long departmentId) {
+    public ResponseEntity<List<EmployeeResponse>> findByDepartment(@PathVariable Long departmentId) {
         return new ResponseEntity<>(employeeService.getEmployeesByDepartment(departmentId), HttpStatus.OK);
     }
 
     @GetMapping("/organization/{organizationId}")
-    public ResponseEntity<List<Employee>> findByOrganization(@PathVariable Long organizationId) {
+    public ResponseEntity<List<EmployeeResponse>> findByOrganization(@PathVariable Long organizationId) {
         return new ResponseEntity<>(employeeService.getEmployeesByOrganization(organizationId), HttpStatus.OK);
     }
+
 }

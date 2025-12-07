@@ -1,13 +1,15 @@
 package be.pxl.services.services;
 
 import be.pxl.services.domain.Employee;
+import be.pxl.services.domain.dto.EmployeeRequest;
+import be.pxl.services.domain.dto.EmployeeResponse;
 
 import java.util.List;
 
 public interface IEmployeeService {
-    Employee addEmployee(Employee employee);
+    void addEmployee(EmployeeRequest employeeRequest);
     Employee getEmployeeById(Long id);
-    List<Employee> getAllEmployees();
-    List<Employee> getEmployeesByDepartment(Long departmentId);
-    List<Employee> getEmployeesByOrganization(Long organizationId);
+    List<EmployeeResponse> getAllEmployees();
+    List<EmployeeResponse> getEmployeesByDepartment(Long departmentId);
+    List<EmployeeResponse> getEmployeesByOrganization(Long organizationId);
 }
