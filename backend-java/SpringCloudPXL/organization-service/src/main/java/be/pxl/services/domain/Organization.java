@@ -1,25 +1,27 @@
 package be.pxl.services.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
-@Table(name = "department")
+@Table(name = "organization")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    private Long organizationId;
     private String name;
-    private String position;
+    private String address;
     @OneToMany
     private List<Employee> employees;
+    private String position;
 
 }

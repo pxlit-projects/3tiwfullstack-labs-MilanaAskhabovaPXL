@@ -1,11 +1,10 @@
 package be.pxl.services.controller;
 
-import be.pxl.services.domain.Department;
-import be.pxl.services.dto.DepartmentWithEmployeesDTO;
+import be.pxl.services.domain.dto.DepartmentRequest;
+import be.pxl.services.domain.dto.DepartmentResponse;
 import be.pxl.services.services.IDepartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,27 +16,30 @@ public class DepartmentController {
     private final IDepartmentService departmentService;
 
     @PostMapping("/")
-    public ResponseEntity<Department> addDepartment(@RequestBody Department department) {
-        return new ResponseEntity<>(departmentService.addDepartment(department), HttpStatus.CREATED);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addDepartment(@RequestBody DepartmentRequest departmentRequest) {
+        departmentService.addDepartment(departmentRequest);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Department> findById(@PathVariable Long id) {
-        return new ResponseEntity<>(departmentService.getDepartmentById(id), HttpStatus.OK);
+    @ResponseStatus(HttpStatus.OK)
+    public DepartmentResponse findById(@PathVariable Long id) {
+        return departmentService.getDepartmentById(id);
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Department>> findAll() {
-        return new ResponseEntity<>(departmentService.getAllDepartments(), HttpStatus.OK);
+    @ResponseStatus(HttpStatus.OK)
+    public List<DepartmentResponse> findAll() {
+        return departmentService.getAllDepartments();
     }
 
     @GetMapping("/organization/{organizationId}")
-    public ResponseEntity<List<Department>> findByOrganization(@PathVariable Long organizationId) {
-        return new ResponseEntity<>(departmentService.getDepartmentsByOrganization(organizationId), HttpStatus.OK);
+    public List<DepartmentResponse> findByOrganization(@PathVariable Long organizationId) {
+        return departmentService.getDepartmentsByOrganization(organizationId);
     }
 
     @GetMapping("/organization/{organizationId}/with-employees")
-    public ResponseEntity<List<DepartmentWithEmployeesDTO>> findByOrganizationWithEmployees(@PathVariable Long organizationId) {
-        return new ResponseEntity<>(departmentService.getDepartmentsWithEmployeesByOrganization(organizationId), HttpStatus.OK);
+    public List<DepartmentResponse> findByOrganizationWithEmployees(@PathVariable Long organizationId) {
+        return departmentService.getDepartmentsWithEmployeesByOrganization(organizationId);
     }
 }
